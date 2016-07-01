@@ -13,17 +13,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.util.Log;
-import android.content.Intent;
-import android.content.Context;
-import android.graphics.Rect;
-import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.inputmethod.InputMethodManager;
-import android.net.Uri;
-import android.content.pm.PackageManager;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 public class MyCordovaPlugin extends CordovaPlugin {
   private static final String TAG = "MyCordovaPlugin";
@@ -42,8 +33,9 @@ public class MyCordovaPlugin extends CordovaPlugin {
     } else if(action.equals("getDate")) {
       // An example of returning data back to the web layer
       final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
-      callback.sendPluginResult(result);
+      callbackContext.sendPluginResult(result);
     }
     return true;
   }
+
 }

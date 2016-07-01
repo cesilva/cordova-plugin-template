@@ -2,18 +2,18 @@
 
 #import <Cordova/CDVAvailability.h>
 
-@implementation IonicDeeplinkPlugin
+@implementation MyCordovaPlugin
 
 - (void)pluginInitialize {
 }
 
 - (void)echo:(CDVInvokedUrlCommand *)command {
   NSString* phrase = [command.arguments objectAtIndex:0];
-  NSLog(phrase);
+  NSLog(@"%@", phrase);
 }
 
 - (void)getDate:(CDVInvokedUrlCommand *)command {
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];   
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
   [dateFormatter setLocale:enUSPOSIXLocale];
   [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
@@ -22,7 +22,7 @@
   NSString *iso8601String = [dateFormatter stringFromDate:now];
 
   CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:iso8601String];
-  return result;
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 @end

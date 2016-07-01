@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="cordova-plugin-template"
+    id="my-cordova-plugin"
     version="1.0.0">
     <name>Cordova Plugin Template</name>
     <description></description>
