@@ -5,7 +5,7 @@
     "id": "cordova-plugin-template",
     "platforms": [
       "android",
-      "ios",
+      "ios"
     ]
   },
   "description": "A starting point for a Cordova Plugin"
